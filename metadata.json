@@ -1,0 +1,6 @@
+{
+  "name": "MantiFix Enterprise",
+  "description": "Plataforma operativa para gestión de mantenimiento corporativo, órdenes de trabajo, activos e indicadores SLA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

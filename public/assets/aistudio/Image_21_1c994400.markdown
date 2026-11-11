@@ -1,0 +1,224 @@
+---
+name: MantiFix Enterprise
+colors:
+  surface: '#f8f9ff'
+  surface-dim: '#cbdbf5'
+  surface-bright: '#f8f9ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#eff4ff'
+  surface-container: '#e5eeff'
+  surface-container-high: '#dce9ff'
+  surface-container-highest: '#d3e4fe'
+  on-surface: '#0b1c30'
+  on-surface-variant: '#45464d'
+  inverse-surface: '#213145'
+  inverse-on-surface: '#eaf1ff'
+  outline: '#76777d'
+  outline-variant: '#c6c6cd'
+  surface-tint: '#565e74'
+  primary: '#000000'
+  on-primary: '#ffffff'
+  primary-container: '#131b2e'
+  on-primary-container: '#7c839b'
+  inverse-primary: '#bec6e0'
+  secondary: '#0051d5'
+  on-secondary: '#ffffff'
+  secondary-container: '#316bf3'
+  on-secondary-container: '#fefcff'
+  tertiary: '#000000'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#002113'
+  on-tertiary-container: '#009668'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#dae2fd'
+  primary-fixed-dim: '#bec6e0'
+  on-primary-fixed: '#131b2e'
+  on-primary-fixed-variant: '#3f465c'
+  secondary-fixed: '#dbe1ff'
+  secondary-fixed-dim: '#b4c5ff'
+  on-secondary-fixed: '#00174b'
+  on-secondary-fixed-variant: '#003ea8'
+  tertiary-fixed: '#6ffbbe'
+  tertiary-fixed-dim: '#4edea3'
+  on-tertiary-fixed: '#002113'
+  on-tertiary-fixed-variant: '#005236'
+  background: '#f8f9ff'
+  on-background: '#0b1c30'
+  surface-variant: '#d3e4fe'
+typography:
+  display-lg:
+    fontFamily: Inter
+    fontSize: 32px
+    fontWeight: '700'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Inter
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Inter
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: -0.005em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 24px
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 20px
+  body-sm:
+    fontFamily: Inter
+    fontSize: 13px
+    fontWeight: '400'
+    lineHeight: 18px
+  label-md:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '600'
+    lineHeight: 16px
+    letterSpacing: 0.02em
+  label-sm:
+    fontFamily: Inter
+    fontSize: 11px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.04em
+  code-sm:
+    fontFamily: JetBrains Mono
+    fontSize: 12px
+    fontWeight: '500'
+    lineHeight: 16px
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  gutter-sm: 1rem
+  margin: 2rem
+  margin-sm: 1rem
+  space-2xs: 0.25rem
+  space-xs: 0.5rem
+  space-sm: 0.75rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2rem
+  space-2xl: 3rem
+---
+
+## Brand & Style
+
+This design system delivers an operational, mission-critical workspace tailored for facility managers, corporate maintenance technicians, and enterprise operations leads. The aesthetic reflects structural precision, high operational clarity, and industrial efficiency. 
+
+Drawing from **Corporate / Modern** principles combined with **Minimalism**, the interface emphasizes functional density and calm authority. Visual clutter is stripped away to ensure that critical operational data—SLA counters, asset health indicators, urgency tags, and multi-tenant assignment queues—can be scanned and acted upon instantly without cognitive fatigue. The UI conveys reliability, institutional trust, and relentless order.
+
+## Colors
+
+The palette balances authoritative deep slate tones with a high-contrast neutral foundation and an unambiguous operational signaling system.
+
+- **Primary Canvas & Chrome:** 
+  - Slate Black (`#0F172A`) commands high-level navigation, primary CTA actions, and structural headers.
+  - Deep Slate (`#1E293B`) anchors sidebars, structural overlays, and active states.
+  - Neutral Base (`#F8FAFC` background canvas, `#FFFFFF` card surfaces, `#F1F5F9` nested panels, `#E2E8F0` structural hairpins).
+  - Slate Neutral Body (`#334155` for high-contrast reading, `#64748B` for secondary labels).
+
+- **Brand & Interaction Accent:**
+  - Royal Blue (`#2563EB`) guides interactive focus states, primary link navigation, and active selection filters.
+
+- **Operational Status Tokens:**
+  - **Pending / In Review:** Amber (`#F59E0B`), paired with `#FEF3C7` backgrounds and `#92400E` text.
+  - **Assigned / In Progress:** Blue (`#3B82F6`), paired with `#EFF6FF` backgrounds and `#1D4ED8` text.
+  - **Resolved / Closed:** Emerald (`#10B981`), paired with `#ECFDF5` backgrounds and `#065F46` text.
+  - **Critical / Urgent / Escalated:** Rose (`#EF4444`), paired with `#FEF2F2` backgrounds and `#991B1B` text.
+
+Surface tiers must rely strictly on neutral contrast: canvas layers rest at `#F8FAFC`, white cards (`#FFFFFF`) pop against this ground, and internal section containers drop down to `#F1F5F9`.
+
+## Typography
+
+The type system is built on **Inter** to ensure maximum legibility across complex data sets, multi-column operational grids, and technical forms. 
+
+- **Numerical & Code Precision:** Tabular numbers (`font-variant-numeric: tabular-nums`) must be enabled on all data tables, metric values, currency, and date/time displays. Ticket identifiers, equipment serial numbers, and system logs leverage `code-sm` (`JetBrains Mono`) for unambiguous character delineation.
+- **Hierarchy Rules:** Section headlines use semi-bold weights (`600`) with subtle negative letter tracking to reinforce structural solidity. Data density is achieved through `body-sm` (13px) and `body-md` (14px), preventing vertical sprawl while maintaining accessibility standards.
+- **Uppercase Labels:** Badges, operational indicators, and table column headers leverage `label-sm` with slight uppercase letter-spacing to delineate metadata from core content.
+
+## Layout & Spacing
+
+The layout is grounded in a rigorous 8pt spatial grid, optimized for data-dense corporate dashboards and operational triage views.
+
+- **Grid Architecture:** 
+  - Desktop workspaces leverage a fluid 12-column grid with a `1.5rem` (24px) gutter and a max-width container cap of 1600px for ultrawide desktop monitors.
+  - Sidebars remain fixed at `260px` (expanded) or `64px` (collapsed icon-only mode).
+  - Tablet environments drop to an 8-column grid (`1rem` gutters), while mobile reflows to a single-column stacked view with horizontal swipe mechanics for analytical tables.
+- **Density Scaling:**
+  - Standard spacing uses `space-md` (`1rem`) for internal card padding and form stacks.
+  - High-density modes (e.g., ticket data grids, audit logs) compress internal row padding to `space-xs` (4px vertical, 12px horizontal) to maximize viewable data rows above the fold.
+
+## Elevation & Depth
+
+Visual hierarchy in this design system avoids heavy shadows, instead relying on **low-contrast outlines** paired with subtle ambient diffusion.
+
+- **Outlines over Elevation:** Card surfaces, data tables, and control bars maintain a crisp 1px border (`#E2E8F0`). Flat boundaries ensure structural alignment across dense arrangements.
+- **Ambient Shadow Levels:**
+  - **Flat / Base (Cards, Tables):** `0 1px 3px 0 rgba(15, 23, 42, 0.05), 0 1px 2px -1px rgba(15, 23, 42, 0.05)`.
+  - **Elevated (Dropdowns, Flyouts, Popovers):** `0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05)`.
+  - **Overlay / Modal (Ticket Drawers, Action Dialogs):** `0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.05)`.
+- **Modals & Drawers:** Layering is reinforced by a semi-opaque backdrop blur overlay (`rgba(15, 23, 42, 0.4)` with `backdrop-filter: blur(4px)`), focusing visual attention strictly on the contextual intervention.
+
+## Shapes
+
+The design system enforces a disciplined geometric standard: Level `2` (Rounded).
+
+- **Standard Elements (0.5rem / 8px):** Buttons, text fields, search bars, filter dropdowns, and baseline metric card containers utilize an 8px border radius. This balances industrial efficiency with modern ergonomics.
+- **Large Containers (1rem / 16px):** Primary analytical modules, ticket details panels, and modal shells apply `rounded-lg` (16px).
+- **Badges & Status Pills:** High-visibility indicators (urgent status, technician assignment chips) adopt a full pill radius (`9999px`) to visually differentiate metadata from actionable input controls.
+
+## Components
+
+### Buttons
+- **Primary:** Solid `#0F172A` background, white label, 8px radius, subtle hover lift with `#1E293B` transition.
+- **Secondary / Action:** Solid `#2563EB` background for key transactional operations (e.g., "Crear Solicitud", "Aprobar Orden").
+- **Outline / Secondary:** 1px `#E2E8F0` border, `#FFFFFF` background, `#334155` text; hover shifts to `#F8FAFC`.
+- **Destructive:** Soft `#FEF2F2` background with `#DC2626` text; turns solid `#DC2626` with white text on critical confirmation states.
+
+### Status Badges & Chips
+- Status badges feature a filled pill design: a soft tinted background (10–15% opacity of the tone), dark tone-matching typography, and a 6px solid dot indicator representing state:
+  - *Pendiente:* `#FEF3C7` background, `#92400E` label, `#F59E0B` dot.
+  - *En Proceso:* `#EFF6FF` background, `#1D4ED8` label, `#3B82F6` dot.
+  - *Resuelta:* `#ECFDF5` background, `#065F46` label, `#10B981` dot.
+  - *Urgente:* `#FEF2F2` background, `#991B1B` label, `#EF4444` dot with optional subtle pulse animation for P1 incidents.
+
+### Data Tables
+- Header row utilizes `#F8FAFC` background with a lower 1px border (`#E2E8F0`), displaying column labels in `label-sm` (`#64748B`).
+- Alternating row zebra-striping is avoided; instead, use subtle hover states (`#F8FAFC`) across table rows.
+- Sticky action bars appear upon multi-row selection for bulk operations (batch assignment, status shifts).
+
+### Input Fields & Selects
+- 1px border using `#CBD5E1`, transitioning to `#2563EB` with a 2px diffuse ring (`rgba(37, 99, 235, 0.15)`) on focus.
+- Inactive/disabled fields leverage `#F1F5F9` surface with `#94A3B8` text.
+- Mandatory fields feature high-contrast indicator markers.
+
+### Cards & Metric Modules
+- Metric tiles highlight top-level KPIs (e.g., MTTR, SLA Compliance, Solicitudes Abiertas): crisp `#FFFFFF` fill, 1px `#E2E8F0` border, 8px padding, bold numerical readouts in `headline-lg`, and operational trend indicators (+/- percentages styled with emerald or red accents).
+
+### Maintenance Timeline & Audit Trail
+- A vertical continuous line (`#E2E8F0`) with 10px circular status nodes. Critical events (equipment shutdown, escalation) trigger semantic node color fills, accompanied by relative timestamps and technician identity tags.
