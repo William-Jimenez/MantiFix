@@ -2,7 +2,7 @@ export type WorkOrderStatus = 'Pendiente' | 'En Proceso' | 'Resuelta' | 'Urgente
 
 export type PriorityLevel = 'P1' | 'P2' | 'P3' | 'P4';
 
-export type NavView = 'dashboard' | 'orders' | 'assets' | 'technicians';
+export type NavView = 'home' | 'dashboard' | 'orders' | 'assets' | 'technicians';
 
 export interface TimelineEvent {
   id: string;
