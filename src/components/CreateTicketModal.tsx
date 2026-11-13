@@ -64,26 +64,26 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0F172A]/40 backdrop-blur-[4px]"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85"
       onClick={onClose}
     >
       <div
-        className="w-full max-w-lg bg-white rounded-2xl border border-[#E2E8F0] shadow-[0_20px_25px_-5px_rgba(15,23,42,0.1),0_8px_10px_-6px_rgba(15,23,42,0.05)] overflow-hidden"
+        className="w-full max-w-lg bg-[#000000] border border-white/25 overflow-hidden text-white"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="px-6 py-4 border-b border-[#E2E8F0] flex items-center justify-between bg-[#F8FAFC]">
+        <div className="px-6 py-4 border-b border-white/15 flex items-center justify-between bg-[#000000]">
           <div>
-            <h2 className="text-[16px] font-semibold text-[#0F172A]">
+            <h2 className="text-xl font-editorial tracking-tight text-white">
               Nueva Solicitud de Mantenimiento
             </h2>
-            <p className="text-[12px] text-[#64748B]">
-              Registra una orden de trabajo y asígnala a la cola operativa.
+            <p className="text-[11px] uppercase tracking-wider text-white/50 mt-0.5">
+              [ REGISTRO Y DESPACHO EN COLA OPERATIVA ]
             </p>
           </div>
           <button
             onClick={onClose}
             aria-label="Cerrar modal"
-            className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0F172A] hover:bg-[#E2E8F0]/60 transition-colors"
+            className="p-1.5 text-white/60 hover:text-white border border-transparent hover:border-white/30 transition-colors"
           >
             <X className="w-4 h-4" />
           </button>
@@ -91,8 +91,8 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
 
         <form onSubmit={handleSubmit} className="p-6 space-y-4">
           <div>
-            <label className="block text-[12px] font-semibold text-[#334155] mb-1">
-              Título del Incidente <span className="text-[#EF4444]">*</span>
+            <label className="block text-[10px] uppercase tracking-[0.1em] text-white/70 mb-1">
+              Título del Incidente <span className="text-[#ff2936]">*</span>
             </label>
             <input
               type="text"
@@ -100,22 +100,22 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               placeholder="Ej. Falla en sensor de presión Chiller #2"
-              className="w-full h-9 px-3 rounded-lg bg-white border border-[#CBD5E1] text-[13px] text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15"
+              className="w-full h-9 px-3 bg-[#101010] border border-white/20 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-white"
             />
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label className="block text-[12px] font-semibold text-[#334155] mb-1">
-                Activo / Equipo <span className="text-[#EF4444]">*</span>
+              <label className="block text-[10px] uppercase tracking-[0.1em] text-white/70 mb-1">
+                Activo / Equipo <span className="text-[#ff2936]">*</span>
               </label>
               <select
                 value={assetSerial}
                 onChange={(e) => setAssetSerial(e.target.value)}
-                className="w-full h-9 px-3 rounded-lg bg-white border border-[#CBD5E1] text-[13px] text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15"
+                className="w-full h-9 px-3 bg-[#101010] border border-white/20 text-[13px] text-white focus:outline-none focus:border-white"
               >
                 {assets.map((asset) => (
-                  <option key={asset.id} value={asset.serial}>
+                  <option key={asset.id} value={asset.serial} className="bg-[#000000] text-white">
                     {asset.name} ({asset.serial})
                   </option>
                 ))}
@@ -123,34 +123,34 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
             </div>
 
             <div>
-              <label className="block text-[12px] font-semibold text-[#334155] mb-1">
-                Prioridad SLA <span className="text-[#EF4444]">*</span>
+              <label className="block text-[10px] uppercase tracking-[0.1em] text-white/70 mb-1">
+                Prioridad SLA <span className="text-[#ff2936]">*</span>
               </label>
               <select
                 value={priority}
                 onChange={(e) => setPriority(e.target.value as PriorityLevel)}
-                className="w-full h-9 px-3 rounded-lg bg-white border border-[#CBD5E1] text-[13px] text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15"
+                className="w-full h-9 px-3 bg-[#101010] border border-white/20 text-[13px] text-white focus:outline-none focus:border-white"
               >
-                <option value="P1">P1 — Crítica (1h)</option>
-                <option value="P2">P2 — Alta (4h)</option>
-                <option value="P3">P3 — Media (12h)</option>
-                <option value="P4">P4 — Baja (24h)</option>
+                <option value="P1" className="bg-[#000000] text-white">P1 — Crítica (1h)</option>
+                <option value="P2" className="bg-[#000000] text-white">P2 — Alta (4h)</option>
+                <option value="P3" className="bg-[#000000] text-white">P3 — Media (12h)</option>
+                <option value="P4" className="bg-[#000000] text-white">P4 — Baja (24h)</option>
               </select>
             </div>
           </div>
 
           <div>
-            <label className="block text-[12px] font-semibold text-[#334155] mb-1">
+            <label className="block text-[10px] uppercase tracking-[0.1em] text-white/70 mb-1">
               Asignar Técnico (Opcional)
             </label>
             <select
               value={assignedTo}
               onChange={(e) => setAssignedTo(e.target.value)}
-              className="w-full h-9 px-3 rounded-lg bg-white border border-[#CBD5E1] text-[13px] text-[#0F172A] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15"
+              className="w-full h-9 px-3 bg-[#101010] border border-white/20 text-[13px] text-white focus:outline-none focus:border-white"
             >
-              <option value="">Dejar en cola sin asignar</option>
+              <option value="" className="bg-[#000000] text-white">Dejar en cola sin asignar</option>
               {technicians.map((tech) => (
-                <option key={tech.id} value={tech.name}>
+                <option key={tech.id} value={tech.name} className="bg-[#000000] text-white">
                   {tech.name} — {tech.specialty}
                 </option>
               ))}
@@ -158,7 +158,7 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
           </div>
 
           <div>
-            <label className="block text-[12px] font-semibold text-[#334155] mb-1">
+            <label className="block text-[10px] uppercase tracking-[0.1em] text-white/70 mb-1">
               Descripción Técnica
             </label>
             <textarea
@@ -166,21 +166,21 @@ export const CreateTicketModal: React.FC<CreateTicketModalProps> = ({
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               placeholder="Detalla síntomas, lecturas de sensores o instrucciones de acceso..."
-              className="w-full p-3 rounded-lg bg-white border border-[#CBD5E1] text-[13px] text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[#2563EB] focus:ring-2 focus:ring-[#2563EB]/15 resize-none"
+              className="w-full p-3 bg-[#101010] border border-white/20 text-[13px] text-white placeholder:text-white/40 focus:outline-none focus:border-white resize-none"
             />
           </div>
 
-          <div className="pt-2 flex items-center justify-end gap-2.5">
+          <div className="pt-2 flex items-center justify-end gap-3 border-t border-white/15">
             <button
               type="button"
               onClick={onClose}
-              className="h-9 px-4 rounded-lg border border-[#E2E8F0] bg-white text-[13px] font-medium text-[#334155] hover:bg-[#F8FAFC] transition-colors"
+              className="h-9 px-4 border border-white/25 bg-[#000000] text-white/70 hover:text-white hover:border-white text-[12px] uppercase tracking-wider transition-colors"
             >
               Cancelar
             </button>
             <button
               type="submit"
-              className="h-9 px-4 rounded-lg bg-[#2563EB] hover:bg-[#1D4ED8] text-white text-[13px] font-medium transition-colors"
+              className="h-9 px-5 bg-white text-black hover:bg-black hover:text-white border border-white text-[12px] uppercase tracking-wider font-semibold transition-colors"
             >
               Crear Solicitud
             </button>

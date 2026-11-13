@@ -1,19 +1,59 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    color: #0F172A;
-    background-color: #F8FAFC;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+@theme {
+  /* Freshman Colors */
+  --color-pure-white: #ffffff;
+  --color-carbon-black: #000000;
+  --color-charcoal-shale: #101010;
+  --color-signal-red: #ff2936;
 
-  body {
-    margin: 0;
-    background-color: #F8FAFC;
-    color: #334155;
-  }
+  /* Typography */
+  --font-editorial-new: 'Cormorant Garamond', 'Editorial New', Georgia, serif;
+  --font-tt-firs-neue: 'Inter', 'TT Firs Neue', ui-sans-serif, system-ui, sans-serif;
+  --font-altform: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-wasted-year: 'Caveat', 'Wasted Year', cursive;
+
+  /* Radii - All strictly 0px */
+  --radius-tags: 0px;
+  --radius-cards: 0px;
+  --radius-inputs: 0px;
+  --radius-buttons: 0px;
+}
+
+:root {
+  --color-pure-white: #ffffff;
+  --color-carbon-black: #000000;
+  --color-charcoal-shale: #101010;
+  --color-signal-red: #ff2936;
+
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  color: #ffffff;
+  background-color: #000000;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #000000;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* Enforce Freshman flatness & zero radius across all elements */
+*, *::before, *::after {
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+.font-editorial {
+  font-family: 'Cormorant Garamond', 'Editorial New', Georgia, serif;
+  font-style: italic;
+  font-weight: 200;
+}
+
+.font-flourish {
+  font-family: 'Caveat', 'Wasted Year', cursive;
 }
 
 .font-mono-code {
@@ -24,18 +64,17 @@
   font-variant-numeric: tabular-nums;
 }
 
-/* Custom subtle scrollbars for dense enterprise tables */
+/* Hairline dividers & dark velvet custom scrollbars */
 ::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: 4px;
+  height: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #F1F5F9;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #CBD5E1;
-  border-radius: 9999px;
+  background: #262626;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #94A3B8;
+  background: #404040;
 }

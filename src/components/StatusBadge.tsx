@@ -6,46 +6,50 @@ interface StatusBadgeProps {
   pulse?: boolean;
 }
 
-const STATUS_STYLES: Record<
+const STATUS_CONFIG: Record<
   WorkOrderStatus,
-  { bg: string; text: string; dot: string }
+  { border: string; text: string; dot: string; label: string }
 > = {
-  Pendiente: {
-    bg: 'bg-[#FEF3C7]',
-    text: 'text-[#92400E]',
-    dot: 'bg-[#F59E0B]',
+  Urgente: {
+    border: 'border-[#ff2936]',
+    text: 'text-white',
+    dot: 'bg-[#ff2936]',
+    label: '[ URGENTE ]',
   },
   'En Proceso': {
-    bg: 'bg-[#EFF6FF]',
-    text: 'text-[#1D4ED8]',
-    dot: 'bg-[#3B82F6]',
+    border: 'border-white/40',
+    text: 'text-white',
+    dot: 'bg-white',
+    label: '[ EN PROCESO ]',
+  },
+  Pendiente: {
+    border: 'border-white/20',
+    text: 'text-white/75',
+    dot: 'bg-white/40',
+    label: '[ PENDIENTE ]',
   },
   Resuelta: {
-    bg: 'bg-[#ECFDF5]',
-    text: 'text-[#065F46]',
-    dot: 'bg-[#10B981]',
-  },
-  Urgente: {
-    bg: 'bg-[#FEF2F2]',
-    text: 'text-[#991B1B]',
-    dot: 'bg-[#EF4444]',
+    border: 'border-white/30',
+    text: 'text-white/90',
+    dot: 'bg-white/70',
+    label: '[ RESUELTA ]',
   },
 };
 
 export const StatusBadge: React.FC<StatusBadgeProps> = ({ status, pulse = false }) => {
-  const style = STATUS_STYLES[status];
+  const config = STATUS_CONFIG[status] ?? STATUS_CONFIG['Pendiente'];
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-semibold tracking-[0.02em] whitespace-nowrap ${style.bg} ${style.text}`}
+      className={`inline-flex items-center gap-1.5 px-2 py-0.5 bg-[#000000] border ${config.border} ${config.text} text-[11px] uppercase tracking-wider font-medium whitespace-nowrap`}
     >
       <span className="relative flex h-1.5 w-1.5">
         {pulse && status === 'Urgente' && (
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#EF4444] opacity-75" />
+          <span className="animate-ping absolute inline-flex h-full w-full bg-[#ff2936] opacity-75" />
         )}
-        <span className={`relative inline-flex rounded-full h-1.5 w-1.5 ${style.dot}`} />
+        <span className={`relative inline-flex h-1.5 w-1.5 ${config.dot}`} />
       </span>
-      {status}
+      <span>{config.label}</span>
     </span>
   );
 };
