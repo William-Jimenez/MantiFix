@@ -20,6 +20,10 @@
   --radius-buttons: 0px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   --color-pure-white: #ffffff;
   --color-carbon-black: #000000;
